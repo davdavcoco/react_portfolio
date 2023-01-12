@@ -64,7 +64,7 @@ export default function Home() {
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
               I am an Full Stack Developer and NodeJS specialist. Feel free to
               take a look at my latest portfolio at the bottom. Join me down
-              below and let's get hyped !
+              below and lets get hyped !
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
@@ -167,7 +167,7 @@ export default function Home() {
           <div className="dark:text-white">
             <h3 className="text-3xl py-1">Portfolio</h3>
             <p className="text-md py-2 leading-8 text-gray-80">
-              Since the beginning of my journey as a freelancer developer, I've
+              Since the beginning of my journey as a freelancer developer, Ive
               done a remote work for
               <span className="text-orange-500"> agencies </span>
               consulted for <span className="text-orange-500">startups </span>
