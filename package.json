@@ -8,10 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d www"
   },
   "dependencies": {
-    "@next/font": "13.1.1",
+    "@next/font": "^13.0.5",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "next": "^13.0.5",
