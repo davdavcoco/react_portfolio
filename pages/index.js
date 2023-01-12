@@ -10,12 +10,12 @@ import deved from "../public/dev-ed-wave.png";
 import design from "../public/design.png";
 import code from "../public/code.png";
 import consulting from "../public/consulting.png";
-import web1 from "../public/web1.png";
-import web2 from "../public/web2.png";
-import web3 from "../public/web3.png";
-import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
+import web1 from "../public/web-5.png";
+import web2 from "../public/web-2.png";
+import web3 from "../public/web-6.png";
+import web4 from "../public/web-9.png";
+import web5 from "../public/web-13.png";
+import web6 from "../public/web-17.png";
 import { useState } from "react";
 import Progressbar from "../components/progress_bar";
 import { render } from "react-dom";
@@ -79,7 +79,8 @@ export default function Home() {
             </a>
           </div>
           <div className="relative mx-auto bg-gradient-to-b from-red-500 rounded-full w-80 h-80 mt-20 to-orange-500 overflow-hidden md:h-96 md:w-96">
-            <Image src={deved} layout="fill" objectFit="cover" />
+            <Image src={deved} layout="fill" objectFit="cover" 
+                alt="character"/>
           </div>
         </section>
         <section className="md:flex md:justify-content md:gap-16">
@@ -184,6 +185,7 @@ export default function Home() {
                 src={web1}
                 className="rounded-lg object-cover w-full h-full"
                 layout="objectFit"
+                alt="web portfolio 1"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -191,6 +193,7 @@ export default function Home() {
                 src={web2}
                 className="rounded-lg object-cover w-full h-full"
                 layout="objectFit"
+                alt="web portfolio 2"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -198,6 +201,7 @@ export default function Home() {
                 src={web3}
                 className="rounded-lg object-cover w-full h-full"
                 layout="objectFit"
+                alt="web portfolio 3"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -205,6 +209,7 @@ export default function Home() {
                 src={web4}
                 className="rounded-lg object-cover w-full h-full"
                 layout="objectFit"
+                alt="web portfolio 4"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -212,6 +217,7 @@ export default function Home() {
                 src={web5}
                 className="rounded-lg object-cover w-full h-full"
                 layout="objectFit"
+                alt="web portfolio 5"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -221,6 +227,7 @@ export default function Home() {
                 width={"100%"}
                 height={"100%"}
                 layout="responsive"
+                alt="web portfolio 6"
               />
             </div>
           </div>
