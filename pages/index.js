@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-        <title>David Adiel</title>
+        <title>Davdavcoco</title>
         <meta name="description" content="Portfolio of davdavcoco" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
