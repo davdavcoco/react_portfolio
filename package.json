@@ -2,14 +2,11 @@
   "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homagepage": "https://davdavcoco.github.io/react_portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages d build"
   },
   "dependencies": {
     "@next/font": "13.1.1",
