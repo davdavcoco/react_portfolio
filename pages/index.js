@@ -84,8 +84,8 @@ export default function Home() {
           </div>
         </section>
         <section className="md:flex md:justify-content md:gap-16">
-          <div className="py-2">
-            <h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600">
+          <div className="py-2 dark:text-white">
+            <h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600 dark:text-white">
               Professional Skills
             </h2>
             <p className="py-2 pb-2 font-medium">NodeJS</p>
@@ -95,17 +95,17 @@ export default function Home() {
             <p className="py-2 pb-2 font-medium">Boostrap</p>
             <Progressbar bgcolor="orange" progress="90" height={10} />
           </div>
-          <div className="py-2">
-            <h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600">
+          <div className="py-2 ">
+            <h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600 dark:text-white">
               Professional Skills
             </h2>
-            <div className="flex justify-between gap-8">
+            <div className="flex justify-between gap-8 dark:text-white">
               <div className="mb-10 w-1/6 h-1/6 ">
                 <CircularProgressbar
                   value={`95`}
                   text={`95%`}
                   styles={buildStyles({
-                    textColor: "black",
+                    textColor: darkMode ? 'white' : 'black',
                     pathColor: "orange",
                     trailColor: "gray",
                   })}
@@ -117,7 +117,7 @@ export default function Home() {
                   value={`80`}
                   text={`80%`}
                   styles={buildStyles({
-                    textColor: "black",
+                    textColor: darkMode ? 'white' : 'black',
                     pathColor: "orange",
                     trailColor: "gray",
                   })}
@@ -129,7 +129,7 @@ export default function Home() {
                   value={`85`}
                   text={`85%`}
                   styles={buildStyles({
-                    textColor: "black",
+                    textColor: darkMode ? 'white' : 'black',
                     pathColor: "orange",
                     trailColor: "gray",
                   })}
@@ -141,7 +141,7 @@ export default function Home() {
                   value={`60`}
                   text={`60%`}
                   styles={buildStyles({
-                    textColor: "black",
+                    textColor: darkMode ? 'white' : 'black',
                     pathColor: "orange",
                     trailColor: "gray",
                   })}
@@ -153,7 +153,7 @@ export default function Home() {
                   value={`80`}
                   text={`80%`}
                   styles={buildStyles({
-                    textColor: "black",
+                    textColor: darkMode ? 'white' : 'black',
                     pathColor: "orange",
                     trailColor: "gray",
                   })}
