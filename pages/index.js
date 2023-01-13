@@ -81,7 +81,7 @@ export default function Home() {
               <AiFillLinkedin />
             </a>
           </m.div>
-          <m.div className="relative mx-auto bg-gradient-to-b from-red-500 rounded-full w-80 h-80 mt-20 to-orange-500 overflow-hidden md:h-96 md:w-96"  initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, delay: 0.5}}>
+          <m.div className="relative mx-auto bg-gradient-to-b from-red-500 rounded-full w-72 h-72 mt-20 to-orange-500 overflow-hidden md:h-96 md:w-96"  initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, delay: 0.5}}>
             <Image src={deved} layout="fill" objectFit="cover" 
                 alt="character"/>
           </m.div>
@@ -102,7 +102,7 @@ export default function Home() {
             <h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600 dark:text-white">
               Professional Skills
             </h2>
-            <div className="flex justify-between gap-8 dark:text-white">
+            <div className="md:flex md:justify-between flex md:gap-8 gap-2 dark:text-white">
               <div className="mb-10 w-1/6 h-1/6 ">
                 <CircularProgressbar
                   value={`95`}
