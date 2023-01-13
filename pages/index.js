@@ -23,7 +23,6 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import {motion as m, useAnimation} from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import {container, item} from "../pages/animation";
 
 const percentage = 66;
 
