@@ -16,11 +16,15 @@ import web3 from "../public/web-6.png";
 import web4 from "../public/web-9.png";
 import web5 from "../public/web-13.png";
 import web6 from "../public/web-17.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Progressbar from "../components/progress_bar";
 import { render } from "react-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import {motion as m, useAnimation} from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {container, item} from "../pages/animation";
+
 const percentage = 66;
 
 export default function Home() {
@@ -54,7 +58,7 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-          <div className="text-center p-10">
+          <m.div className="text-center p-10" initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, delay: 0.5}}>
             <h2 className="text-5xl py-2 text-orange-500 font-medium md:text-6xl">
               David Adiel
             </h2>
@@ -66,8 +70,8 @@ export default function Home() {
               take a look at my latest portfolio at the bottom. Join me down
               below and lets get hyped !
             </p>
-          </div>
-          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
+          </m.div>
+          <m.div className="text-5xl flex justify-center gap-16 py-3 text-gray-600" initial={{x: "-100%" }} animate={{x: "0%"}} transition={{duration: 0.75, delay: 0.5}}>
             <a href="https://twitter.com/davidadiel">
               <AiFillTwitterCircle />
             </a>
@@ -77,11 +81,11 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/david-adiel-1b9187243/">
               <AiFillLinkedin />
             </a>
-          </div>
-          <div className="relative mx-auto bg-gradient-to-b from-red-500 rounded-full w-80 h-80 mt-20 to-orange-500 overflow-hidden md:h-96 md:w-96">
+          </m.div>
+          <m.div className="relative mx-auto bg-gradient-to-b from-red-500 rounded-full w-80 h-80 mt-20 to-orange-500 overflow-hidden md:h-96 md:w-96"  initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, delay: 0.5}}>
             <Image src={deved} layout="fill" objectFit="cover" 
                 alt="character"/>
-          </div>
+          </m.div>
         </section>
         <section className="md:flex md:justify-content md:gap-16">
           <div className="py-2 dark:text-white">
@@ -95,7 +99,7 @@ export default function Home() {
             <p className="py-2 pb-2 font-medium">Boostrap</p>
             <Progressbar bgcolor="orange" progress="90" height={10} />
           </div>
-          <div className="py-2 ">
+          <div className="py-2">
             <h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600 dark:text-white">
               Professional Skills
             </h2>
