@@ -21,13 +21,13 @@ import Progressbar from "../components/progress_bar";
 import { render } from "react-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import {motion as m, useAnimation} from "framer-motion";
+import { motion as m, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const percentage = 66;
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -57,20 +57,24 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-          <m.div className="text-center p-10" initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, delay: 0.5}}>
-            <h2 className="text-5xl py-2 text-orange-500 font-medium md:text-6xl">
+          <div className="text-center p-1 overflow-hidden">
+            <m.h2 className="text-5xl py-2 text-orange-500 font-medium md:text-6xl" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
               David Adiel
-            </h2>
-            <h3 className="text-2xl py-2 dark:text-white">
+            </m.h2>
+          </div>
+          <div className="text-center p-1 overflow-hidden">
+            <m.h3 className="text-2xl py-2 dark:text-white" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
               Developer and a little bit designer.
-            </h3>
-            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
+            </m.h3>
+          </div>
+          <div className="text-center p-1 overflow-hidden">
+            <m.p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
               I am an Full Stack Developer and NodeJS specialist. Feel free to
               take a look at my latest portfolio at the bottom. Join me down
               below and lets get hyped !
-            </p>
-          </m.div>
-          <m.div className="text-5xl flex justify-center gap-16 py-3 text-gray-600" initial={{x: "-100%" }} animate={{x: "0%"}} transition={{duration: 0.75, delay: 0.5}}>
+            </m.p>
+          </div>
+          <m.div className="text-5xl flex justify-center gap-16 py-3 text-gray-600" initial={{ x: "-100%" }} animate={{ x: "0%" }} transition={{ duration: 0.75, delay: 0.5 }}>
             <a href="https://twitter.com/davidadiel">
               <AiFillTwitterCircle />
             </a>
@@ -81,27 +85,37 @@ export default function Home() {
               <AiFillLinkedin />
             </a>
           </m.div>
-          <m.div className="relative mx-auto bg-gradient-to-b from-red-500 rounded-full w-72 h-72 mt-20 to-orange-500 overflow-hidden md:h-96 md:w-96"  initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, delay: 0.5}}>
-            <Image src={deved} layout="fill" objectFit="cover" 
-                alt="character"/>
+          <m.div className="relative mx-auto bg-gradient-to-b from-red-500 rounded-full w-72 h-72 mt-20 to-orange-500 overflow-hidden md:h-96 md:w-96" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}>
+            <Image src={deved} layout="fill" objectFit="cover"
+              alt="character" />
           </m.div>
         </section>
         <section className="md:flex md:justify-content md:gap-16">
           <div className="py-2 dark:text-white">
-            <h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600 dark:text-white">
-              Professional Skills
-            </h2>
-            <p className="py-2 pb-2 font-medium">NodeJS</p>
-            <Progressbar bgcolor="orange" progress="80" height={10} />
-            <p className="py-2 pb-2 font-medium">React</p>
-            <Progressbar bgcolor="orange" progress="30" height={10} />
-            <p className="py-2 pb-2 font-medium">Boostrap</p>
-            <Progressbar bgcolor="orange" progress="90" height={10} />
+            <div className="overflow-hidden">
+              <m.h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600 dark:text-white" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >
+                Professional Skills
+              </m.h2>
+            </div>
+            <div className="overflow-hidden">
+              <m.p className="py-2 pb-2 font-medium" initial={{ x: '-100%' }} animate={{ x: 0 }} transition={{ duration: 1, delay: 0.5 }} >NodeJS</m.p>
+              <Progressbar bgcolor="orange" progress="80" height={10} />
+            </div>
+            <div className="overflow-hidden">
+              <m.p className="py-2 pb-2 font-medium" initial={{ x: '-100%' }} animate={{ x: 0 }} transition={{ duration: 1, delay: 0.5 }} >React</m.p>
+              <Progressbar bgcolor="orange" progress="30" height={10} />
+            </div>
+            <div className="overflow-hidden">
+              <m.p className="py-2 pb-2 font-medium" initial={{ x: '-100%' }} animate={{ x: 0 }} transition={{ duration: 1, delay: 0.5 }} >Boostrap</m.p>
+              <Progressbar bgcolor="orange" progress="90" height={10} />
+            </div>
           </div>
           <div className="py-2">
-            <h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600 dark:text-white">
-              Professional Skills
-            </h2>
+            <div className="overflow-hidden">
+              <m.h2 className="text-3xl py-2 font-medium md:text-2xl text-gray-600 dark:text-white" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >
+                Professional Skills
+              </m.h2>
+            </div>
             <div className="md:flex md:justify-between flex md:gap-8 gap-2 dark:text-white">
               <div className="mb-10 w-1/6 h-1/6 ">
                 <CircularProgressbar
@@ -113,7 +127,9 @@ export default function Home() {
                     trailColor: "gray",
                   })}
                 />
-                <p className="py-2 pb-2 font-medium">HTML</p>
+                <div className="overflow-hidden">
+                  <m.p className="py-2 pb-2 font-medium" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >HTML</m.p>
+                </div>
               </div>
               <div className="mb-10 w-1/6 h-1/6">
                 <CircularProgressbar
@@ -125,7 +141,9 @@ export default function Home() {
                     trailColor: "gray",
                   })}
                 />
-                <p className="py-2 pb-2 font-medium">CSS</p>
+                <div className="overflow-hidden">
+                  <m.p className="py-2 pb-2 font-medium" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >CSS</m.p>
+                </div>
               </div>
               <div className="mb-10 w-1/6 h-1/6">
                 <CircularProgressbar
@@ -137,7 +155,9 @@ export default function Home() {
                     trailColor: "gray",
                   })}
                 />
-                <p className="py-2 pb-2 font-medium">MYSQL</p>
+                <div className="overflow-hidden">
+                  <m.p className="py-2 pb-2 font-medium" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >MYSQL</m.p>
+                </div>
               </div>
               <div className="mb-10 w-1/6 h-1/6">
                 <CircularProgressbar
@@ -149,7 +169,9 @@ export default function Home() {
                     trailColor: "gray",
                   })}
                 />
-                <p className="py-2 pb-2 font-medium">PHP</p>
+                <div className="overflow-hidden">
+                  <m.p className="py-2 pb-2 font-medium" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >PHP</m.p>
+                </div>
               </div>
               <div className="mb-10 w-1/6 h-1/6">
                 <CircularProgressbar
@@ -161,26 +183,34 @@ export default function Home() {
                     trailColor: "gray",
                   })}
                 />
-                <p className="py-2 pb-2 font-medium">IONIC</p>
+                <div className="overflow-hidden">
+                  <m.p className="py-2 pb-2 font-medium" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >IONIC</m.p>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section>
           <div className="dark:text-white">
-            <h3 className="text-3xl py-1">Portfolio</h3>
-            <p className="text-md py-2 leading-8 text-gray-80">
-              Since the beginning of my journey as a freelancer developer, Ive
-              done a remote work for
-              <span className="text-orange-500"> agencies </span>
-              consulted for <span className="text-orange-500">startups </span>
-              and collaborated with talented people to create for both business
-              and consumer use.
-            </p>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-white">
-              I offer from a wide range of services, including programming and
-              teaching.
-            </p>
+            <div className="overflow-hidden">
+              <m.h3 className="text-3xl py-1" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >Portfolio</m.h3>
+            </div>
+            <div className="overflow-hidden">
+              <m.p className="text-md py-2 leading-8 text-gray-80" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >
+                Since the beginning of my journey as a freelancer developer, Ive
+                done a remote work for
+                <span className="text-orange-500"> agencies </span>
+                consulted for <span className="text-orange-500">startups </span>
+                and collaborated with talented people to create for both business
+                and consumer use.
+              </m.p>
+            </div>
+            <div className="overflow-hidden">
+              <m.p className="text-md py-2 leading-8 text-gray-800 dark:text-white" initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.5 }} >
+                I offer from a wide range of services, including programming and
+                teaching.
+              </m.p>
+            </div>
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             <div className="basis-1/3 flex-1">
