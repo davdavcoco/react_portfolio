@@ -23,7 +23,6 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { motion as m, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Analytics } from "@vercel/analytics/react";
 
 const percentage = 66;
 
@@ -272,7 +271,6 @@ export default function Home() {
           </footer>
         </section>
       </main>
-      <Analytics />
     </div>
   );
 }
