@@ -52,9 +52,7 @@ export default function Hero() {
 
   const whatsappUrl =
     "https://wa.me/628978294220?text=" +
-    encodeURIComponent(
-      "Halo David, saya melihat portfolio Anda dan tertarik untuk mendiskusikan proyek website (company profile / studio portfolio / custom web). Boleh kita jadwalkan diskusi lebih lanjut?"
-    );
+    encodeURIComponent("Halo David, saya tertarik diskusi proyek website.");
 
   return (
     <section className="studio-section hero-auto-line relative overflow-hidden pt-16 md:pt-28 pb-16 md:pb-28 border-b border-studio-border/70 dark:border-studio-darkBorder/70">

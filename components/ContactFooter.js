@@ -6,10 +6,9 @@ export default function ContactFooter() {
   const [copied, setCopied] = useState(false);
   const email = "davidadiel96@gmail.com";
   const whatsappNumber = "628978294220";
-  const whatsappTemplate = encodeURIComponent(
-    "Halo David, saya melihat portfolio Anda dan tertarik untuk mendiskusikan proyek website (company profile / studio portfolio / custom web). Boleh kita jadwalkan diskusi lebih lanjut?"
-  );
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappTemplate}`;
+  const defaultMessage = "Halo David, saya tertarik diskusi proyek website.";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+  const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent("Diskusi Proyek Website")}&body=${encodeURIComponent(defaultMessage)}`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
@@ -57,7 +56,7 @@ export default function ContactFooter() {
 
             {/* Email Direct Mailto */}
             <a
-              href={`mailto:${email}?subject=Diskusi%20Proyek%20Website%20via%20Portfolio`}
+              href={mailtoUrl}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-studio-forest text-neutral-100 hover:bg-studio-moss dark:bg-neutral-100 dark:text-studio-dark dark:hover:bg-amber-300 font-sans text-sm font-semibold transition-all shadow-md"
             >
               <FiMail className="w-4 h-4" />
