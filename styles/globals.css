@@ -2,51 +2,259 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
+  body {
+    background-color: #FBF9F5;
+    color: #151719;
+    overflow-x: hidden;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+  html.dark body {
+    background-color: #0F1113;
+    color: #EDEDEB;
   }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Seamless ticker / marquee for studio specialties */
+@keyframes studio-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.animate-studio-marquee {
+  display: flex;
+  width: max-content;
+  animation: studio-marquee 28s linear infinite;
+}
+
+.animate-studio-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hairline borders */
+.border-hairline {
+  border-width: 1px;
+}
+
+/* Subtle ambient background glow (pure CSS, ultra lightweight) */
+.ambient-glow-top {
+  position: absolute;
+  top: -100px;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, rgba(16, 185, 129, 0.02) 40%, transparent 70%);
+  pointer-events: none;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+/* Auto-expanding top border on load for Section 1 (Hero) */
+@keyframes hero-line-expand {
+  0% {
+    width: 0%;
+    opacity: 0.2;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.hero-auto-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #10B981 0%, #F59E0B 50%, #10B981 100%);
+  animation: hero-line-expand 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 20;
+}
+
+/* Luxury text shimmer effect that runs automatically */
+@keyframes text-shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    #10B981 25%,
+    #F59E0B 50%,
+    #10B981 75%,
+    currentColor 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-shimmer-sweep 5s ease-in-out infinite;
+}
+
+/* Ambient floating orb animation */
+@keyframes ambient-float-pulse {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(1.15);
+    opacity: 1;
+  }
+}
+
+.animate-ambient-float {
+  animation: ambient-float-pulse 8s ease-in-out infinite;
+}
+
+.ambient-glow-mid {
+  position: absolute;
+  top: 40%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, rgba(217, 119, 6, 0.01) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* Interactive Section Highlight & Expanding Top Line */
+.studio-section {
+  position: relative;
+  transition: background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.studio-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #10B981 0%, #F59E0B 50%, transparent 100%);
+  transition: width 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 20;
+}
+
+.studio-section:hover::before {
+  width: 100%;
+}
+
+/* Subtle ambient spotlight that fades in when hovering each section */
+.studio-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 25%, rgba(16, 185, 129, 0.04), transparent 75%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+
+.studio-section:hover::after {
+  opacity: 1;
+}
+
+/* Kinetic Title Slide & Glide on Section Hover */
+.section-title-glide {
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.4s ease;
+}
+
+.studio-section:hover .section-title-glide {
+  transform: translateX(10px);
+}
+
+/* Blinking cursor for typing effect on section hover */
+@keyframes typing-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  background-color: currentColor;
+  margin-left: 5px;
+  vertical-align: -0.05em;
+  animation: typing-blink 0.8s infinite;
+}
+
+/* Left-to-center expanding accent line for section headers */
+.header-line-expand {
+  width: 2rem;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s ease;
+}
+
+.studio-section:hover .header-line-expand {
+  width: 4.5rem;
+  background-color: #10B981;
+}
+
+/* Interactive text underline wipe */
+.hover-underline-wipe {
+  position: relative;
+  display: inline-block;
+}
+.hover-underline-wipe::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-underline-wipe:hover::after {
+  width: 100%;
+}
+
+/* Subtle magnetic lift on cards */
+.interactive-card {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+}
+.interactive-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 140, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 140, 0.45);
 }
 
 @font-face {
   font-family: "burtons";
   src: url("../public/Burtons.otf");
 }
+
+
