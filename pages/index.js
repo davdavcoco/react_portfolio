@@ -7,7 +7,6 @@ import CapabilitiesSection from "../components/CapabilitiesSection";
 import ApproachSection from "../components/ApproachSection";
 import TechStackSection from "../components/TechStackSection";
 import ContactFooter from "../components/ContactFooter";
-import VanishSection from "../components/VanishSection";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -61,9 +60,7 @@ export default function Home() {
       <main className="min-h-screen bg-[#FBF9F5] text-studio-text dark:bg-[#0F1113] dark:text-neutral-100 transition-colors duration-300">
         <Navbar darkMode={darkMode} toggleTheme={handleToggleTheme} setDarkMode={setDarkMode} />
 
-        <VanishSection id="hero-section">
-          <Hero />
-        </VanishSection>
+        <Hero />
 
         {/* Studio Ticker Marquee (CSS only, zero CPU lag, smooth 60fps) */}
         <div className="py-3.5 border-b border-studio-border/60 dark:border-studio-darkBorder/60 bg-studio-surface/40 dark:bg-black/40 overflow-hidden select-none">
@@ -96,21 +93,13 @@ export default function Home() {
           </div>
         </div>
 
-        <VanishSection>
-          <ProjectsSection />
-        </VanishSection>
+        <ProjectsSection />
 
-        <VanishSection>
-          <CapabilitiesSection />
-        </VanishSection>
+        <CapabilitiesSection />
 
-        <VanishSection>
-          <ApproachSection />
-        </VanishSection>
+        <ApproachSection />
 
-        <VanishSection>
-          <TechStackSection />
-        </VanishSection>
+        <TechStackSection />
 
         <ContactFooter />
       </main>
